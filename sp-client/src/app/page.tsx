@@ -1,6 +1,7 @@
 /** @format */
 
 import { CallToAction } from "@/sections/CallToAction";
+import { AboutMe } from "@/sections/AboutMe";
 import { Features } from "@/sections/Features";
 import { Footer } from "@/sections/Footer";
 import { Header } from "@/sections/Header";
@@ -13,6 +14,7 @@ export default function Home() {
     <div className="">
       <Header />
       <Hero />
+      <AboutMe />
       <LogoTicker />
       <Features />
       <Testimonials />
