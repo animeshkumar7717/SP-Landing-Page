@@ -45,7 +45,7 @@ export const Header = () => {
             </nav>
           </div>
           <div className="flex gap-4 items-center">
-            <Button children="Join Waitlist" />
+            <Button>Join Waitlist</Button>
             <div className="">
               <MenuIcon className="md:hidden" />
             </div>
