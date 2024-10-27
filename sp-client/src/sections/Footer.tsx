@@ -12,48 +12,68 @@ export const Footer = () => {
         <div className="flex flex-col lg:flex-row lg:items-center gap-8">
           {/* left */}
           <div className="flex gap-2 items-center lg:flex-1">
-            <Logo className="h-6 w-6" />
+            <a href="#hero">
+              <Logo className="h-6 w-6" />
+            </a>
             <div className="font-medium">Sudha Pandey Langing Page</div>
           </div>
           {/* middle */}
           <nav className="flex flex-col lg:flex-row gap-5 lg:gap-7 lg:flex-1 lg:justify-center">
             <a
-              href="#"
+              href="#about"
+              className="text-white/70 hover:text-white text-xs md:text-sm transition"
+            >
+              About
+            </a>
+            <a
+              href="#feature"
               className="text-white/70 hover:text-white text-xs md:text-sm transition"
             >
               Feature
             </a>
             <a
-              href="#"
+              href="#client"
               className="text-white/70 hover:text-white text-xs md:text-sm transition"
             >
-              Developer
+              Clients
             </a>
             <a
-              href="#"
+              href="#contact"
               className="text-white/70 hover:text-white text-xs md:text-sm transition"
             >
-              Company
-            </a>
-            <a
-              href="#"
-              className="text-white/70 hover:text-white text-xs md:text-sm transition"
-            >
-              Blog
-            </a>
-            <a
-              href="#"
-              className="text-white/70 hover:text-white text-xs md:text-sm transition"
-            >
-              ChangeLog
+              Contact
             </a>
           </nav>
           {/* right */}
           <div className="flex gap-5 lg:flex-1 lg:justify-end">
-            <XSocial className="text-white/40 hover:text-white transition" />
-            <InstaSocial className="text-white/40 hover:text-white transition" />
-            <YTSocial className="text-white/40 hover:text-white transition" />
-            <LinkedInSocial className="text-white/40 hover:text-white transition" />
+            <a
+              href="https://www.threads.net/@sudhapandeysp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <XSocial className="text-white/40 hover:text-white transition" />
+            </a>
+            <a
+              href="https://www.instagram.com/adswalimarketing?igsh=MTQ0d20yNzBiOXBoeg=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <InstaSocial className="text-white/40 hover:text-white transition" />
+            </a>
+            <a
+              href="https://www.youtube.com/@sudhapandeysp.."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <YTSocial className="text-white/40 hover:text-white transition" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sudha-pandey-912669226/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LinkedInSocial className="text-white/40 hover:text-white transition" />
+            </a>
           </div>
         </div>
       </div>

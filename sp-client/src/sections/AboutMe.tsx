@@ -21,7 +21,7 @@ export const AboutMe = () => {
   );
 
   return (
-    <section className="py-16 md:py-20" ref={sectionRef}>
+    <section id="about" className="py-16 md:py-20" ref={sectionRef}>
       <div className="container">
         <motion.div
           ref={borderedDivRef}
@@ -77,7 +77,13 @@ export const AboutMe = () => {
               </div>
             </div>
             <div className="flex justify-start mt-8">
-              <Button className="px-8 py-3" children="Contact Me" />
+              <a
+                href="https://wa.me/9128952819"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="px-8 py-3" children="Contact Me" />
+              </a>
             </div>
           </div>
 

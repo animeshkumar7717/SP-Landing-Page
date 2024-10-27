@@ -12,6 +12,7 @@ import {
 } from "framer-motion";
 import { RefObject, useEffect, useRef } from "react";
 
+// Define the useRelativeMousePosition hook to track mouse position relative to an element
 const useRelativeMousePosition = (to: RefObject<HTMLElement>) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -19,13 +20,12 @@ const useRelativeMousePosition = (to: RefObject<HTMLElement>) => {
   const updateMousePosition = (event: MouseEvent) => {
     if (!to.current) return;
     const { top, left } = to.current.getBoundingClientRect();
-    mouseX.set(event.x - left);
-    mouseY.set(event.y - top);
+    mouseX.set(event.clientX - left);
+    mouseY.set(event.clientY - top);
   };
 
   useEffect(() => {
     window.addEventListener("mousemove", updateMousePosition);
-
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
     };
@@ -47,11 +47,14 @@ export const CallToAction = () => {
     [-100, 100]
   );
 
+  // Call useRelativeMousePosition to get mouseX and mouseY
   const [mouseX, mouseY] = useRelativeMousePosition(borderedDivRef);
+
+  // Use mouseX and mouseY in the maskImage style
   const maskImage = useMotionTemplate`radial-gradient(50% 50% at ${mouseX}px ${mouseY}px, black, transparent)`;
 
   return (
-    <section className="py-12 md:py-16" ref={sectionRef}>
+    <section id="contact" className="py-12 md:py-16" ref={sectionRef}>
       <div className="container">
         <motion.div
           ref={borderedDivRef}

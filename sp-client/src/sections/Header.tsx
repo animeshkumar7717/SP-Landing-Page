@@ -12,21 +12,35 @@ export const Header = () => {
         <div className="flex justify-between items-center md:border border-white/15 md:p-2.5 rounded-xl max-w-2xl mx-auto relative">
           <div className="absolute inset-0 backdrop-blur -z-10 hidden md:block"></div>
           <div className="border h-10 w-10 rounded-lg inline-flex justify-center items-center border-white/15">
-            <LogoIcon className="h-8 w-8" />
+            <a href="#hero">
+              <LogoIcon className="h-8 w-8" />
+            </a>
           </div>
           <div className="hidden md:block">
             <nav className="flex gap-8 text-sm">
-              <a href="#" className="text-white/70 hover:text-white transition">
-                Feature
+              <a
+                href="#about"
+                className="text-white/70 hover:text-white transition"
+              >
+                About
               </a>
-              <a href="#" className="text-white/70 hover:text-white transition">
-                Developers
+              <a
+                href="#feature"
+                className="text-white/70 hover:text-white transition"
+              >
+                Features
               </a>
-              <a href="#" className="text-white/70 hover:text-white transition">
-                Pricing
+              <a
+                href="#client"
+                className="text-white/70 hover:text-white transition"
+              >
+                Clients
               </a>
-              <a href="#" className="text-white/70 hover:text-white transition">
-                ChangeLog
+              <a
+                href="#contact"
+                className="text-white/70 hover:text-white transition"
+              >
+                Contact
               </a>
             </nav>
           </div>

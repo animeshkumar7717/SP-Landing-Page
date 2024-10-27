@@ -162,7 +162,7 @@ export const Features = () => {
   };
 
   return (
-    <section className="py-20 md:py-24">
+    <section id="feature" className="py-20 md:py-24">
       <div className="container">
         <h2 className="text-5xl md:text-6xl font-medium text-center tracking-tight">
           Elevate your SEO efforts.
