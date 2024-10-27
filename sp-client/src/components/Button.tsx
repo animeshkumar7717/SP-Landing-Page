@@ -4,11 +4,17 @@ import React from "react";
 
 interface ButtonProps extends React.PropsWithChildren {
   className?: string;
+  type?: "button" | "submit" | "reset"; // Add type prop to handle form actions
 }
 
-const Button: React.FC<ButtonProps> = ({ children, className }) => {
+const Button: React.FC<ButtonProps> = ({
+  children,
+  className,
+  type = "button",
+}) => {
   return (
     <button
+      type={type} // Use the type prop
       className={`relative py-2 px-3 rounded-lg font-medium text-sm bg-gradient-to-b from-[#190d2e] to-[#4a208a] shadow-[0px_0px_12px_#8c45ff] ${
         className || ""
       }`}
