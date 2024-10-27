@@ -60,9 +60,9 @@ export const AboutMe = () => {
             <div className="mt-8 space-y-6">
               <div className="border border-white/15 p-4 rounded-lg bg-gradient-to-b from-[rgba(74,32,138,0.7)] to-[rgba(14,0,36,0.8)] shadow-md">
                 <p className="text-lg">
-                  "Sudha has transformed our SEO approach with her in-depth
-                  expertise and innovative ideas. She brings a fresh perspective
-                  and energy to our marketing."
+                  "With Sudha’s expertise, our SEO strategy has reached new
+                  heights. Her innovative ideas and vibrant energy have brought
+                  real, lasting impact to our marketing efforts."
                 </p>
                 <span className="text-white/70 mt-4 block">
                   – Jamie Lee, Founder @ Pulse
@@ -70,8 +70,8 @@ export const AboutMe = () => {
               </div>
               <div className="border border-white/15 p-4 rounded-lg bg-gradient-to-b from-[rgba(74,32,138,0.7)] to-[rgba(14,0,36,0.8)] shadow-md">
                 <p className="text-lg">
-                  "Working with Sudha has been a game-changer. Her user-focused
-                  SEO techniques brought clear, measurable results to our
+                  "Working with Sudha has been a game-changer—her expert,
+                  user-centered SEO brought impactful, measurable growth to our
                   platform."
                 </p>
                 <span className="text-white/70 mt-4 block">
