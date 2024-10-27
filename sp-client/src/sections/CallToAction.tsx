@@ -1,4 +1,5 @@
 /** @format */
+
 "use client";
 import Button from "@/components/Button";
 import starsBg from "@/assets/stars.png";
@@ -10,7 +11,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { RefObject, useEffect, useRef } from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 
 // Define the useRelativeMousePosition hook to track mouse position relative to an element
 const useRelativeMousePosition = (to: RefObject<HTMLElement>) => {
@@ -34,6 +35,41 @@ const useRelativeMousePosition = (to: RefObject<HTMLElement>) => {
   return [mouseX, mouseY];
 };
 
+// Popup component for showing messages
+
+const Popup = ({
+  message,
+  onClose,
+}: {
+  message: string;
+  onClose: () => void;
+}) => (
+  <motion.div
+    className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-60"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.4 }}
+  >
+    <motion.div
+      className="border border-white/15 p-6 md:p-10 rounded-xl bg-gradient-to-bl from-[rgba(140,69,255,0.3)] to-black max-w-xs md:max-w-md text-center relative"
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ scale: 0.8, opacity: 0 }}
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+    >
+      <p className="text-lg md:text-2xl tracking-tight text-white">{message}</p>
+      <button
+        onClick={onClose}
+        className="mt-4 bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-purple-700 transition duration-300"
+      >
+        OK
+      </button>
+      <div className="absolute inset-0 bg-[rgba(140,69,244,0.3)] mix-blend-soft-light opacity-80 rounded-xl pointer-events-none"></div>
+    </motion.div>
+  </motion.div>
+);
+
 export const CallToAction = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const borderedDivRef = useRef<HTMLDivElement>(null);
@@ -52,6 +88,45 @@ export const CallToAction = () => {
 
   // Use mouseX and mouseY in the maskImage style
   const maskImage = useMotionTemplate`radial-gradient(50% 50% at ${mouseX}px ${mouseY}px, black, transparent)`;
+
+  // State for managing popup visibility and message
+  const [popupMessage, setPopupMessage] = useState<string | null>(null);
+
+  // Handle form submit
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formElements = event.target as any;
+    const formData = {
+      name: formElements[0].value,
+      email: formElements[1].value,
+      phone: formElements[2].value,
+      message: formElements[3].value,
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setPopupMessage("Message sent successfully");
+      } else {
+        setPopupMessage("Failed to send message");
+      }
+    } catch (error) {
+      console.log("error", error);
+      setPopupMessage("Error sending message");
+    }
+  };
+
+  // Handle popup close and clear inputs
+  const handleClosePopup = () => {
+    setPopupMessage(null);
+    (document.querySelector("form") as HTMLFormElement).reset(); // Clears the form inputs
+  };
 
   return (
     <section id="contact" className="py-12 md:py-16" ref={sectionRef}>
@@ -91,7 +166,10 @@ export const CallToAction = () => {
               We're here to help you. Send us a message, and we'll get back to
               you soon.
             </p>
-            <form className="mt-8 space-y-4 max-w-sm mx-auto text-white">
+            <form
+              onSubmit={handleSubmit}
+              className="mt-8 space-y-4 max-w-sm mx-auto text-white"
+            >
               <input
                 type="text"
                 placeholder="Full Name"
@@ -113,12 +191,15 @@ export const CallToAction = () => {
                 rows={4}
               ></textarea>
               <div className="flex justify-center mt-4">
-                <Button children="Send" className="px-8 py-2" />
+                <Button type="submit" children="Send" className="px-8 py-2" />
               </div>
             </form>
           </div>
         </motion.div>
       </div>
+      {popupMessage && (
+        <Popup message={popupMessage} onClose={handleClosePopup} />
+      )}
     </section>
   );
 };
