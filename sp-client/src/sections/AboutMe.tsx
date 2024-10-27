@@ -51,8 +51,11 @@ export const AboutMe = () => {
               About Me
             </h2>
             <p className="text-base md:text-lg text-white/80 mt-3 max-w-md">
-              I’m Sudha Pandey, a passionate SEO and digital marketing expert
-              dedicated to helping businesses thrive in the online space.
+              "Hello! I'm Sudha Pandey, your go-to SEO and digital marketing
+              strategist with a flair for driving success in the digital world.
+              My mission? To elevate your brand’s online presence, turning
+              clicks into loyal customers and analytics into actionable
+              insights.
             </p>
             <div className="mt-8 space-y-6">
               <div className="border border-white/15 p-4 rounded-lg bg-gradient-to-b from-[rgba(74,32,138,0.7)] to-[rgba(14,0,36,0.8)] shadow-md">
@@ -88,11 +91,11 @@ export const AboutMe = () => {
           </div>
 
           {/* Right Side: Image of Sudha with Effects */}
-          <div className="relative w-full h-96 md:w-1/2 md:mt-0 flex justify-center">
+          <div className="relative w-full h-auto md:w-1/2 md:mt-0 flex justify-center">
             <img
               src={sudhaImage.src}
               alt="Sudha Pandey"
-              className="rounded-lg shadow-lg border border-white/20 h-92 w-64"
+              className="rounded-lg shadow-lg border border-white/20"
             />
           </div>
         </motion.div>
