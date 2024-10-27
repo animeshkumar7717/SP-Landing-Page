@@ -37,7 +37,7 @@ const testimonials = [
 
 export const Testimonials = () => {
   return (
-    <section className="py-20 md:py-24">
+    <section id="client" className="py-20 md:py-24">
       <div className="container">
         <h2 className="text-5xl md:6xl text-center tracking-tighter font-medium">
           Beyond Expections
