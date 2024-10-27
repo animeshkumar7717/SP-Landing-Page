@@ -51,18 +51,18 @@ export const AboutMe = () => {
               About Me
             </h2>
             <p className="text-base md:text-lg text-white/80 mt-3 max-w-md">
-              "Hello! I'm Sudha Pandey, your go-to SEO and digital marketing
-              strategist with a flair for driving success in the digital world.
-              My mission? To elevate your brand’s online presence, turning
-              clicks into loyal customers and analytics into actionable
-              insights.
+              &quot;Hello! I&apos;m Sudha Pandey, your go-to SEO and digital
+              marketing strategist with a flair for driving success in the
+              digital world. My mission? To elevate your brand&apos;s online
+              presence, turning clicks into loyal customers and analytics into
+              actionable insights.&quot;
             </p>
             <div className="mt-8 space-y-6">
               <div className="border border-white/15 p-4 rounded-lg bg-gradient-to-b from-[rgba(74,32,138,0.7)] to-[rgba(14,0,36,0.8)] shadow-md">
                 <p className="text-lg">
-                  "With Sudha’s expertise, our SEO strategy has reached new
+                  &quot;With Sudha’s expertise, our SEO strategy has reached new
                   heights. Her innovative ideas and vibrant energy have brought
-                  real, lasting impact to our marketing efforts."
+                  real, lasting impact to our marketing efforts.&quot;
                 </p>
                 <span className="text-white/70 mt-4 block">
                   – Jamie Lee, Founder @ Pulse
@@ -70,22 +70,23 @@ export const AboutMe = () => {
               </div>
               <div className="border border-white/15 p-4 rounded-lg bg-gradient-to-b from-[rgba(74,32,138,0.7)] to-[rgba(14,0,36,0.8)] shadow-md">
                 <p className="text-lg">
-                  "Working with Sudha has been a game-changer—her expert,
+                  &quot;Working with Sudha has been a game-changer—her expert,
                   user-centered SEO brought impactful, measurable growth to our
-                  platform."
+                  platform.&quot;
                 </p>
                 <span className="text-white/70 mt-4 block">
                   – Alec Whitten, CTO @ Tech Solutions
                 </span>
               </div>
             </div>
+
             <div className="flex justify-start mt-8">
               <a
                 href="https://wa.me/9128952819"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button className="px-8 py-3" children="Contact Me" />
+                <Button className="px-8 py-3">Contact Me</Button>
               </a>
             </div>
           </div>

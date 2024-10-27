@@ -30,7 +30,7 @@ const useRelativeMousePosition = (to: RefObject<HTMLElement>) => {
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
     };
-  }, []);
+  }, [updateMousePosition]);
 
   return [mouseX, mouseY];
 };
@@ -163,8 +163,8 @@ export const CallToAction = () => {
               Contact Us
             </h2>
             <p className="text-center text-base md:text-lg mx-auto text-white/70 mt-3 tracking-tight">
-              We're here to help you. Send us a message, and we'll get back to
-              you soon.
+              We&apos;re here to help you. Send us a message, and we&apos;ll get
+              back to you soon.
             </p>
             <form
               onSubmit={handleSubmit}
@@ -191,7 +191,9 @@ export const CallToAction = () => {
                 rows={4}
               ></textarea>
               <div className="flex justify-center mt-4">
-                <Button type="submit" children="Send" className="px-8 py-2" />
+                <Button type="submit" className="px-8 py-2">
+                  Send
+                </Button>
               </div>
             </form>
           </div>

@@ -122,7 +122,7 @@ export const Hero = () => {
           Smart Technology Meets User-Friendly Marketing Tools.
         </p>
         <div className="flex justify-center mt-5">
-          <Button children="Join Waitlist" />
+          <Button>Join Waitlist</Button>
         </div>
       </div>
     </motion.section>
