@@ -118,8 +118,8 @@ export const Hero = () => {
           Sudha Pandey
         </h1>
         <p className="text-sm md:text-lg text-white/70 mt-5 text-center max-w-[15rem] md:max-w-sm mx-auto">
-          Elevate Your Site Visibility effortlessly with AI, where smart
-          technology meets user friendly SEO and Marketing tools.
+          Elevate Your Site Visibility Effortlessly with AI-Powered SEO: Where
+          Smart Technology Meets User-Friendly Marketing Tools.
         </p>
         <div className="flex justify-center mt-5">
           <Button children="Join Waitlist" />
